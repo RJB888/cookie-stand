@@ -1,22 +1,22 @@
 'use strict';
 
-var firstPike = {
+function Store(name, minCust, maxCust, cookiePerHr) {
 
-  name: 'First and Pike',
-  storeHours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
-  minHourlyCust: 23,
-  maxHourlyCust: 65,
-  avgCookiePer: 6.3,
-  hourlyCookies: [],
-  dailyCookies: 0,
+  this.name = 'First and Pike';
+  this.storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+  this.minHourlyCust = minCust;
+  this.maxHourlyCust = maxCust;
+  this.avgCookiePer = cookiePerHr;
+  this.hourlyCookies = [];
+  this.dailyCookies = 0;
 
-  customerPerHr: function() {
+  this.customerPerHr = function() {
     var hourlyCustomerEst = Math.floor(Math.random() * (this.maxHourlyCust - this.minHourlyCust) + this.minHourlyCust);
     //console.log('customers this hour: ' + hourlyCustomerEst);
     return hourlyCustomerEst;
-  },
+  };
 
-  calcAvgCookiePerHr: function() {
+  this.calcAvgCookiePerHr = function() {
     this.hourlyCookies = [];
     this.dailyCookies = 0;
     for (var y = 0; y < this.storeHours.length; y++){
@@ -26,8 +26,8 @@ var firstPike = {
       this.dailyCookies += this.hourlyCookies[y];
       //console.log('current cookie total ' + this.dailyCookies);
     }
-  }
-
+  };
+  this.calcAvgCookiePerHr();
 };
 
 var seaTac = {
