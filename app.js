@@ -1,9 +1,11 @@
 'use strict';
 
-function Store(name, minCust, maxCust, cookiePerHr) {
+var storeOpenHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
+function Store(name, hours, minCust, maxCust, cookiePerHr) {
 
   this.name = name;
-  this.storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+  this.storeHours = hours;
   this.minHourlyCust = minCust;
   this.maxHourlyCust = maxCust;
   this.avgCookiePer = cookiePerHr;
@@ -39,7 +41,10 @@ function Store(name, minCust, maxCust, cookiePerHr) {
       var newCell = document.createElement('td');
       newCell.innerText = this.hourlyCookies[i];
       newRow.appendChild(newCell);
-    }
+    };
+    var newTotal = document.createElement('td');
+    newTotal.innerText = this.dailyCookies;
+    newRow.appendChild(newTotal);
   };
 
   this.calcAvgCookiePerHr();
@@ -48,8 +53,16 @@ function Store(name, minCust, maxCust, cookiePerHr) {
 // when you create the HTML element and store it into a variable - you shouldn't have to select that item again since it is stored in the variable already
 
 
-var storeA = new Store('Bobs',2, 20, 1.5);
+var storeA = new Store('Kirk', storeOpenHours, 2, 20, 1.5);
 storeA.addYoSelf();
+var storeB = new Store('Spock', storeOpenHours, 30, 60, 2.5);
+storeB.addYoSelf();
+var storeC = new Store('Bones', storeOpenHours, 20, 80, 1);
+storeC.addYoSelf();
+var storeD = new Store('Chekov', storeOpenHours, 10, 60, 3.2);
+storeD.addYoSelf();
+
+
 
 //
 //
