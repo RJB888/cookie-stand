@@ -95,3 +95,6 @@ function calculateAvgCookies(potatoes) {
   }
 
 }
+
+var listness = document.getElementById('firstItem');
+listness.innerHTML += 'morestuff stuff';
