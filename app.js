@@ -3,6 +3,7 @@
 var firstPike = {
 
   name: 'First and Pike',
+  storeHours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
   minHourlyCust: 23,
   maxHourlyCust: 65,
   avgCookiePer: 6.3,
@@ -11,9 +12,22 @@ var firstPike = {
 
   customerPerHr: function() {
     var hourlyCustomerEst = Math.floor(Math.random() * (this.maxHourlyCust - this.minHourlyCust) + this.minHourlyCust);
-    console.log('customers this hour: ' + hourlyCustomerEst);
+    //console.log('customers this hour: ' + hourlyCustomerEst);
     return hourlyCustomerEst;
+  },
+
+  calcAvgCookiePerHr: function() {
+    this.hourlyCookies = [];
+    this.dailyCookies = 0;
+    for (var y = 0; y < this.storeHours.length; y++){
+      //console.log('Iteration: ' + y);
+      this.hourlyCookies.push(Math.ceil(this.customerPerHr() * this.avgCookiePer));
+      //console.log('hourly cookies: ' + this.hourlyCookies[y]);
+      this.dailyCookies += this.hourlyCookies[y];
+      //console.log('current cookie total ' + this.dailyCookies);
+    }
   }
+
 };
 
 var seaTac = {
@@ -82,19 +96,9 @@ var alki = {
 
 var locations = [firstPike, seaTac, seattleCenter, capitolHill, alki];
 
-function calculateAvgCookies(potatoes) {
-  for (var i = 0; i < potatoes.length; i++) {
-    for (var y = 0; y < 15; y++){
-      console.log('Iteration: ' + y);
-      potatoes[i].hourlyCookies.push(Math.ceil(potatoes[i].customerPerHr() * potatoes[i].avgCookiePer));
-      console.log('hourly cookies: ' + potatoes[i].hourlyCookies[y]);
-      potatoes[i].dailyCookies += potatoes[i].hourlyCookies[y];
-      console.log('current cookie total ' + potatoes[i].dailyCookies);
-    }
-  }
-}
 
-calculateAvgCookies(locations);
+// when you create the HTML element and store it into a variable - you shouldn't have to select that item again since it is stored in the variable already
+
 
 function addLocation(name){
   var listAddition = document.createElement('ul');
