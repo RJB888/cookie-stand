@@ -81,7 +81,7 @@ var alki = {
 
 var locations = [firstPike, seaTac, seattleCenter, capitolHill, alki];
 
-var locations = [firstPike];
+//var locations = [firstPike];
 
 function calculateAvgCookies(potatoes) {
   for (var i = 0; i < potatoes.length; i++) {
@@ -96,5 +96,49 @@ function calculateAvgCookies(potatoes) {
 
 }
 
-var listness = document.getElementById('firstItem');
-listness.innerHTML += 'morestuff stuff';
+//********** START TEMP CODE TO MANIUPULATE DOM *******////
+
+// var listness = document.getElementById('firstItem');
+// listness.innerHTML += 'morestuff n things';
+// var li = newElement('li');
+// li.innerHTML = 'more stuff n things';
+// listness.appendChild(li);
+
+
+
+
+function addLocation(name){
+  var listAddition = document.createElement('ul');
+  var tempElement = document.getElementById('salesBody');
+  listAddition.setAttribute('id', name);
+  tempElement.appendChild(listAddition);
+  for (var i = 6; i < 21; i++){
+    var listItem = document.createElement('li');
+    listItem.setAttribute('id', name + i);
+    if (i < 12){
+      listItem.innerText = name.toUpperCase() + ' : ' + i + ' a.m.';
+      listAddition.appendChild(listItem);
+    }
+    else if (i === 12){
+      listItem.innerText = name.toUpperCase() + ' : ' + i + ' p.m.';
+      listAddition.appendChild(listItem);
+    }
+    else {
+      listItem.innerText = name.toUpperCase() + ' : ' + (i - 12) + ' p.m.';
+      listAddition.appendChild(listItem);
+    }
+  }
+}
+
+
+
+for (var q = 0; q < locations.length; q++){
+  addLocation(locations[q].name);
+  console.log(q);
+
+}
+
+// var temp = document.getElementById('firstItem');
+// var newElement = document.createElement('li');
+// newElement.innerText = 'THis is a new h1 tag';
+// temp.appendChild(newElement);
