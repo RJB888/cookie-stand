@@ -1,0 +1,35 @@
+body {
+  background-color: rgba(182, 99, 58, 0.7);
+  border: 1px black solid;
+  width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.highlight {
+  font-family: 'Sedgwick Ave Display', cursive;
+
+}
+.navbar {
+  background-color: #b6633a;
+}
+.navbar ul li {
+  display: inline;
+  padding-right: 20px;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: #ECEAE9;
+}
+.data {
+  color: black;
+  font-family: 'Arial', sans-serif;
+  font-size: 3em;
+
+}
+
+.textThings {
+  font-family: 'Georgia', serif;
+  color: #B5A098;
+  background-color: #172424;
+}
