@@ -1,6 +1,7 @@
 
 var firstPike = {
 
+  name: 'First and Pike',
   minHourlyCust: 23,
   maxHourlyCust: 65,
   avgCookiePer: 6.3,
@@ -16,6 +17,7 @@ var firstPike = {
 
 var seaTac = {
 
+  name: 'SeaTac Airport',
   minHourlyCust : 3,
   maxHourlyCust: 24,
   avgCookiePer: 1.2,
@@ -24,11 +26,14 @@ var seaTac = {
 
   customerPerHr: function() {
     var hourlyCustomerEst = Math.floor(Math.random() * (this.maxHourlyCust - this.minHourlyCust) + this.minHourlyCust);
+    console.log('customers this hour: ' + hourlyCustomerEst);
+    return hourlyCustomerEst;
   }
 };
 
 var seattleCenter = {
 
+  name: 'Seattle Center',
   minHourlyCust : 11,
   maxHourlyCust: 38,
   avgCookiePer: 3.7,
@@ -37,11 +42,14 @@ var seattleCenter = {
 
   customerPerHr: function() {
     var hourlyCustomerEst = Math.floor(Math.random() * (this.maxHourlyCust - this.minHourlyCust) + this.minHourlyCust);
+    console.log('customers this hour: ' + hourlyCustomerEst);
+    return hourlyCustomerEst;
   }
 };
 
 var capitolHill = {
 
+  name: 'Capitol Hill',
   minHourlyCust : 20,
   maxHourlyCust: 38,
   avgCookiePer: 2.3,
@@ -50,11 +58,14 @@ var capitolHill = {
 
   customerPerHr: function() {
     var hourlyCustomerEst = Math.floor(Math.random() * (this.maxHourlyCust - this.minHourlyCust) + this.minHourlyCust);
+    console.log('customers this hour: ' + hourlyCustomerEst);
+    return hourlyCustomerEst;
   }
 };
 
 var alki = {
 
+  name: 'Alki',
   minHourlyCust : 2,
   maxHourlyCust: 16,
   avgCookiePer: 4.6,
@@ -63,6 +74,8 @@ var alki = {
 
   customerPerHr: function() {
     var hourlyCustomerEst = Math.floor(Math.random() * (this.maxHourlyCust - this.minHourlyCust) + this.minHourlyCust);
+    console.log('customers this hour: ' + hourlyCustomerEst);
+    return hourlyCustomerEst;
   }
 };
 
