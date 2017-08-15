@@ -96,6 +96,7 @@ function calculateAvgCookies(potatoes) {
 
 }
 
+calculateAvgCookies(locations);
 //********** START TEMP CODE TO MANIUPULATE DOM *******////
 
 // var listness = document.getElementById('firstItem');
@@ -112,22 +113,29 @@ function addLocation(name){
   var tempElement = document.getElementById('salesBody');
   listAddition.setAttribute('id', name);
   tempElement.appendChild(listAddition);
+  var titleLi = document.createElement('li');
+  titleLi.innerText = name.toUpperCase();
+  listAddition.appendChild(titleLi);
   for (var i = 6; i < 21; i++){
     var listItem = document.createElement('li');
     listItem.setAttribute('id', name + i);
     if (i < 12){
-      listItem.innerText = name.toUpperCase() + ' : ' + i + ' a.m.';
+      listItem.innerText = i + '   a.m. :  ' + locations[q].hourlyCookies[i - 6] + ' cookies.';
       listAddition.appendChild(listItem);
     }
     else if (i === 12){
-      listItem.innerText = name.toUpperCase() + ' : ' + i + ' p.m.';
+      listItem.innerText = i + ' p.m. : ' + locations[q].hourlyCookies[i - 6] + ' cookies.';
       listAddition.appendChild(listItem);
     }
     else {
-      listItem.innerText = name.toUpperCase() + ' : ' + (i - 12) + ' p.m.';
+      listItem.innerText = (i - 12) + '   p.m. :  ' + locations[q].hourlyCookies[i - 6] + ' cookies.';
       listAddition.appendChild(listItem);
     }
   }
+  var totalElement = document.createElement('li');
+  totalElement.setAttribute('id', name + 'Total');
+  totalElement.innerText = name.toUpperCase() + ' Daily Total:  ' + locations[q].dailyCookies + ' cookies.';
+  listAddition.appendChild(totalElement);
 }
 
 
