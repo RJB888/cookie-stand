@@ -1,6 +1,8 @@
 'use strict';
 
 var storeOpenHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var allStoresHourlyTotals = [];
+var uberTotal = 0;
 
 function Store(name, hours, minCust, maxCust, cookiePerHr) {
 
@@ -41,9 +43,16 @@ function Store(name, hours, minCust, maxCust, cookiePerHr) {
       var newCell = document.createElement('td');
       newCell.innerText = this.hourlyCookies[i];
       newRow.appendChild(newCell);
+      if (allStoresHourlyTotals[i] >= 0){
+        allStoresHourlyTotals[i] += this.hourlyCookies[i];
+      }
+      else{
+        allStoresHourlyTotals[i] = this.hourlyCookies[i];
+      }
     };
     var newTotal = document.createElement('td');
     newTotal.innerText = this.dailyCookies;
+    uberTotal += this.dailyCookies;
     newRow.appendChild(newTotal);
   };
 
@@ -53,17 +62,66 @@ function Store(name, hours, minCust, maxCust, cookiePerHr) {
 // when you create the HTML element and store it into a variable - you shouldn't have to select that item again since it is stored in the variable already
 
 
+
+
+var myTable = document.createElement('table');
+var bodyHolder = document.getElementById('salesBody');
+bodyHolder.appendChild(myTable);
+
+function buildHead() {
+  var tempHead = document.createElement('thead');
+  myTable.appendChild(tempHead);
+  var newCell = document.createElement('th');
+  tempHead.appendChild(newCell);
+  for (var i = 0; i < storeOpenHours.length; i++){
+    var hourEntry = document.createElement('th');
+    hourEntry.innerText = storeOpenHours[i];
+    tempHead.appendChild(hourEntry);
+  }
+  var endCell = document.createElement('th');
+  endCell.innerText = 'Store Total';
+  tempHead.appendChild(endCell);
+}
+
+function buildBody(){
+  var tableBody = document.createElement('tbody');
+  tableBody.setAttribute('id','tblBody');
+  myTable.appendChild(tableBody);
+}
+
+function buildFoot(){
+  var myFooter = document.createElement('tfoot');
+  myTable.appendChild(myFooter);
+  var newCell = document.createElement('td');
+  newCell.innerText = 'Total: ';
+  myFooter.appendChild(newCell);
+  for (var i = 0; i < storeOpenHours.length; i++){
+    var nextCell = document.createElement('td');
+    nextCell.innerText = allStoresHourlyTotals[i];
+    myFooter.appendChild(nextCell);
+  }
+  newCell = document.createElement('td');
+  newCell.innerText = uberTotal;
+  myFooter.appendChild(newCell);
+}
+
+buildHead();
+buildBody();
+
 var storeA = new Store('Kirk', storeOpenHours, 2, 20, 1.5);
 storeA.addYoSelf();
+//debugger;
 var storeB = new Store('Spock', storeOpenHours, 30, 60, 2.5);
 storeB.addYoSelf();
+//debugger;
 var storeC = new Store('Bones', storeOpenHours, 20, 80, 1);
 storeC.addYoSelf();
+//debugger;
 var storeD = new Store('Chekov', storeOpenHours, 10, 60, 3.2);
 storeD.addYoSelf();
+//debugger;
 
-
-
+buildFoot();
 //
 //
 // function addLocation(name){
