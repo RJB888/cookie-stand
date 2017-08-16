@@ -6,6 +6,23 @@ body {
   text-align: center;
 }
 
+table {
+  display: table;
+  align-content: center;
+  border-collapse: collapse;
+  margin: auto;
+  color: black;
+  background-color: white;
+}
+tr:nth-child(even){
+  background-color: lightgrey;
+}
+
+td {
+  border: thin solid black;
+
+}
+
 .highlight {
   font-family: 'Sedgwick Ave Display', cursive;
 
