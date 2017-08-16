@@ -114,6 +114,7 @@ var seaTac = new Store('SeaTac Airport', storeOpenHours, 3, 24, 1.2);
 var seattleCenter = new Store('Seattle Center', storeOpenHours, 11, 38, 3.7);
 var capitolHill = new Store('Capitol Hill', storeOpenHours, 20, 38, 2.3);
 var alki = new Store('Alki', storeOpenHours, 2, 16, 4.6);
-var myLocations = [firstPike, seaTac, seattleCenter, capitolHill, alki];
+var spock = new Store('Spock', storeOpenHours, 3, 40, 2.3); //testing CSS row coloring scheme.
+var myLocations = [firstPike, seaTac, seattleCenter, capitolHill, alki, spock];
 
 generateReport(myLocations);

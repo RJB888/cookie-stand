@@ -5,8 +5,30 @@
     <title>Sales Page</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body id="salesBody">
-    <h1>Cookies Needed by Location Each Day</h1>
-    <script type="text/javascript" src="app.js"></script>
+  <body id="salesPage">
+    <div class="form">
+      <form id="addNewStore" action="" method="get">
+        <table>
+          <tr>
+            <th rowspan="2"><input type="submit" name="" value="Add Store"></th>
+            <td><label for="storeName">Location Name</label></td>
+            <td><label for="minCustomers">min Customers</label></td>
+            <td><label for="maxCustomers">max Customers</label></td>
+            <td><label for="cookiesPerHour">avg. Cookies</label></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="storeName" value=""></td>
+            <td><input type="number" name="minCustomers" value=""></td>
+            <td><input type="number" name="maxCustomers" value=""></td>
+            <td><input type="number" step="0.1" name="cookiesPerHour" value=""></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <div id="salesBody">
+      <h1>Cookies Needed by Location Each Day</h1>
+    </div>
   </body>
+  <script type="text/javascript" src="app.js"></script>
 </html>
