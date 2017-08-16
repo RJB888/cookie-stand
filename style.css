@@ -5,6 +5,34 @@ body {
   margin: auto;
   text-align: center;
 }
+#salesBody {
+  background-color: white;
+}
+
+table {
+  font-family: sans-serif;
+  display: table;
+  align-content: center;
+  border-collapse: collapse;
+  margin: auto;
+  color: black;
+  background-color: white;
+}
+table tr:nth-child(even){
+  background-color: #DDD;
+}
+
+th {
+  border: thin solid lightgrey;
+  padding: 10px;
+  font-size: 1.5em;
+
+}
+td {
+  border: thin solid lightgrey;
+  font-size: 1.5em;
+
+}
 
 .highlight {
   font-family: 'Sedgwick Ave Display', cursive;
