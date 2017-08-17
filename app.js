@@ -17,6 +17,7 @@ function Store(name, minCust, maxCust, cookiePerHr) {
 
   this.customerPerHr = function() {
     var hourlyCustomerEst = Math.floor(Math.random() * (this.maxHourlyCust - this.minHourlyCust) + this.minHourlyCust);
+    console.log('Hourly Customer: ' + hourlyCustomerEst);
     return hourlyCustomerEst;
   };
 
@@ -25,6 +26,7 @@ function Store(name, minCust, maxCust, cookiePerHr) {
     this.dailyCookies = 0;
     for (var y = 0; y < this.storeHours.length; y++){
       this.hourlyCookies.push(Math.ceil(this.customerPerHr() * this.avgCookiePer));
+      console.log('cookies this hour: ' + this.hourlyCookies[y]);
       this.dailyCookies += this.hourlyCookies[y];
     }
   };
@@ -114,7 +116,7 @@ var newStoreForm = document.getElementById('addNewStore');
 newStoreForm.addEventListener('submit', harvestAndPostData);
 function harvestAndPostData(event) {
   event.preventDefault();
-  var store = new Store(this.elements['storeName'].value, this.elements['minCustomers'].value, this.elements['maxCustomers'].value, this.elements['cookiesPerHour'].value);
+  var store = new Store(this.elements['storeName'].value, parseInt(this.elements['minCustomers'].value), parseInt(this.elements['maxCustomers'].value), parseFloat(this.elements['cookiesPerHour'].value));
   myLocations.push(store);
   generateReport(myLocations);
 }
