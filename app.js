@@ -118,3 +118,8 @@ function harvestAndPostData(event) {
   myLocations.push(store);
   generateReport(myLocations);
 }
+
+// WOrking on function to create and append
+// function createAndAppend(tag, itsClass, content, parent) {
+//   var tempElement =
+// }
