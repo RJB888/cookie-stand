@@ -2,17 +2,19 @@
 
 var storeOpenHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var allStoresHourlyTotals = [];
+var myLocations = [];
 var uberTotal = 0;
 
-function Store(name, hours, minCust, maxCust, cookiePerHr) {
+function Store(name, minCust, maxCust, cookiePerHr) {
 
   this.name = name;
-  this.storeHours = hours;
+  this.storeHours = storeOpenHours;
   this.minHourlyCust = minCust;
   this.maxHourlyCust = maxCust;
   this.avgCookiePer = cookiePerHr;
   this.hourlyCookies = [];
   this.dailyCookies = 0;
+  this.added = false;
 
   this.customerPerHr = function() {
     var hourlyCustomerEst = Math.floor(Math.random() * (this.maxHourlyCust - this.minHourlyCust) + this.minHourlyCust);
@@ -50,6 +52,7 @@ function Store(name, hours, minCust, maxCust, cookiePerHr) {
     newTotal.innerText = this.dailyCookies;
     uberTotal += this.dailyCookies;
     newRow.appendChild(newTotal);
+    this.added = true;
   };
 
   this.calcAvgCookiePerHr();
@@ -102,19 +105,50 @@ function generateReport(storesArray){
   buildBody();
 
   for (var i = 0; i < storesArray.length; i++){
-    storesArray[i].addYoSelf();
+    if (!storesArray[i].added){
+      storesArray[i].addYoSelf();
+    }
   }
 
   buildFoot();
 
 }
+//
+// var firstPike = new Store('First and Pike', 23, 65, 6.3);
+// var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
+// var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
+// var capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
+// var alki = new Store('Alki', 2, 16, 4.6);
+// var spock = new Store('Spock', 3, 40, 2.3); //testing CSS row coloring scheme.
+// var myLocations = [firstPike, seaTac, seattleCenter, capitolHill, alki, spock];
+//generateReport(myLocations);
 
-var firstPike = new Store('First and Pike', storeOpenHours, 23, 65, 6.3);
-var seaTac = new Store('SeaTac Airport', storeOpenHours, 3, 24, 1.2);
-var seattleCenter = new Store('Seattle Center', storeOpenHours, 11, 38, 3.7);
-var capitolHill = new Store('Capitol Hill', storeOpenHours, 20, 38, 2.3);
-var alki = new Store('Alki', storeOpenHours, 2, 16, 4.6);
-var spock = new Store('Spock', storeOpenHours, 3, 40, 2.3); //testing CSS row coloring scheme.
-var myLocations = [firstPike, seaTac, seattleCenter, capitolHill, alki, spock];
+//BUILD OUT EVENT HANDLERS AND STUFF
 
-generateReport(myLocations);
+//var to capture form element
+var newStoreForm = document.getElementById('addNewStore');
+
+//event handler to capture submit
+newStoreForm.addEventListener('submit', harvestAndPostData);
+//debugger;
+//function to stop default and harvest form info
+function harvestAndPostData(event) {
+//  debugger;
+  event.preventDefault();
+//  debugger;
+  var store = new Store(this.elements['storeName'].value, this.elements['minCustomers'].value, this.elements['maxCustomers'].value, this.elements['cookiesPerHour'].value);
+//  debugger;
+  // store.name = this.elements[storeName].value;
+  // debugger;
+  // store.storeHours = storeOpenHours;
+  // debugger;
+  // store.minHourlyCust = this.elements[minCustomers].value;
+  // debugger;
+  // store.maxHourlyCust = this.elements[maxCustomers].value;
+  // debugger;
+  // store.avgCookiePer = this.elements[cookiesPerHour].value;
+//  debugger;
+  myLocations.push(store);
+//  debugger;
+  generateReport(myLocations);
+}
