@@ -5,13 +5,20 @@ rgb(168, 73, 52); /* burnt-orange
 rgb(169, 86, 52); /* orange-brown */
 
 body {
-  background-color: rgba(182, 99, 58, 0.7);
+  background-color: rgba(182, 99, 58, 0.9);
   border: 1px black solid;
   width: 1200px;
   margin: auto;
+  /*text-align: center;*/
+}
+
+header {
   text-align: center;
 }
 
+section {
+  border: thin solid black;
+}
 
 #salesPage {
   background-color: white;
@@ -50,26 +57,38 @@ td {
 img {
   width: 200px;
 }
-}
+
+
 .columnSm {
   padding: 0px;
+  color: orange;
   margin: 0px;
-  width: 30%;
+  height: 100%;
+  width: 29%;
   float: left;
 }
 
 .largetext {
-  padding: 30px;
+  padding: 20px;
   text-align: center;
   font-size: 200%;
 }
 
 .columnLg {
   padding: 0px;
+  height: 100%;
   margin: 0px;
-  width: 70%;
+  width: 69%;
   float: left;
 
+}
+
+#hugeText {
+  font-size: 3.5em;
+}
+
+#mainFish {
+  width: 400px;
 }
 
  #locations {
@@ -87,7 +106,9 @@ img {
 
 }
 .navbar {
+  text-align: center;
   background-color: #b6633a;
+  border: 2px solid rgb(17, 18, 12);
 }
 .navbar ul li {
   display: inline;

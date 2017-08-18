@@ -8,8 +8,8 @@
   </head>
   <body>
     <header>
-      <img src="photos/salmon.png" alt="Its a fish"/>
-      <h1 class="highlight">The World's Most Amazing Salmon Cookies!</h1>
+      <img id="mainFish" src="photos/salmon.png" alt="Its a fish"/>
+      <h1 class="highlight" id="hugeText">The World's Most Amazing Salmon Cookies!</h1>
     </header>
     <nav class="navbar">
       <ul class="data">
@@ -25,12 +25,16 @@
       <p>
         Your friend Pat has come up with a business idea by combining two signature Seattle icons: Pat has developed a recipe for a coffee-time confection called Salmon Cookies.  They're cookies made into the shape of a salmon, and actually made with salmon (though the fish is ground up so fine that you can't even taste it!) that is the ideal match for a steaming cup of coffee on a gray Seattle morning. Or gray Seattle afternoon... whatever. Tourists will go gaga for them, locals will begrudgingly fall in love with them, and all will be right with the world.
       </p>
-      <section class = 'chinookBanner'> </br> </section>
+      <p>
+        Our mission here at Pat's Salmon Cookies is to ...The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. And save the world from the evils of big business.
+      </p>
+      <section class = 'chinookBanner'> </section>
     </div>
     <div class="data">
-      <h2 class="highlight">Our Locations</h2> <!-- link locations to navbar -->
       <section class="columnLg">
         <!-- location names and addresses -->
+        <h2 class="highlight">Our Locations</h2> <!-- link locations to navbar -->
+
         <table >
           <thead>
             <th id="locations">Location Name</th>
@@ -60,22 +64,23 @@
       </section>
       <section class="columnSm">
         <!-- store hours info  -->
-        <h2 class="highlight largetext">When you can fill your craving!</h2>
+        <h2 class="highlight largetext">When are we open you ask?</h2>
         <p class="highlight largetext">All of our locations are open 7 days a week from 6am - 8pm</p>
       </section>
     </div> <!--locations div -->
     <div class="clearfix"></div>
+    <hr>
     <div class="data">
-      <h2 class="highlight">Amazeballs Merch!!</h2>
+      <h2 class="highlight" id="hugeText">Amazeballs Merch!!</h2>
       <section class="highlight">
-        <img src="photos/cutter.jpeg" alt="Cookie Cutter" title="Salmon Cookie cutter"/>
-        <img src="photos/fish.jpg" alt="Fish magnets" title="Salmon Refridgerator Magnets"/>
-        <img src="photos/shirt.jpg" alt="TShirt" title="Fishy T-Shirt"/>
-        <img src="photos/family.jpg" alt="Product Calendar" title="Yearly Calendar"/>
+        <a href="#"><img src="photos/cutter.jpeg" alt="Cookie Cutter" title="Salmon Cookie cutter"/></a>
+        <a href="#"><img src="photos/fish.jpg" alt="Fish magnets" title="Salmon Refridgerator Magnets"/></a>
+        <a href="#"><img src="photos/shirt.jpg" alt="TShirt" title="Fishy T-Shirt"/></a>
+        <a href="#"><img src="photos/family.jpg" alt="Product Calendar" title="Yearly Calendar"/></a>
       </section>
     </div> <!-- MERCHANDISE -->
     <div class="textThings">
-      <h2 class="highlight">FISHY NEWS...</h2>
+      <h2 class="highlight" id="hugeText">FISHY NEWS...</h2>
         <section class="column">
           <ul>
             <li>We will be haning out with our Solar Shades on during the eclipse next week, with fresh Salmon Cookies for the masses!</li>
@@ -84,7 +89,7 @@
             <li>We will be sponsoring this years Spawn Watch event.. stay tuned for details.</li>
           </ul>
         </section>
-        <section class="column">
+        <section class="columnSm">
           <img src="photos/chinook.jpg" alt="Fish photo" title="Chinook Salmon"/>
         </section>
     </div> <!-- fish news-->
