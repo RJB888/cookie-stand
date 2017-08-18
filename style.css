@@ -1,3 +1,9 @@
+/*color: rgb(218, 184, 119); /* tan
+color: rgb(17, 18, 12);/* blackish
+rgb(185, 117, 55);  /* orangy-tan
+rgb(168, 73, 52); /* burnt-orange
+rgb(169, 86, 52); /* orange-brown */
+
 body {
   background-color: rgba(182, 99, 58, 0.7);
   border: 1px black solid;
@@ -5,6 +11,7 @@ body {
   margin: auto;
   text-align: center;
 }
+
 
 #salesPage {
   background-color: white;
@@ -34,6 +41,46 @@ td {
   font-size: 1.5em;
 
 }
+.chinookBanner {
+  background-image: url(photos/frosted-cookie.jpg);
+  min-height: 175px;
+  min-width: 100%;
+}
+
+img {
+  width: 200px;
+}
+}
+.columnSm {
+  padding: 0px;
+  margin: 0px;
+  width: 30%;
+  float: left;
+}
+
+.largetext {
+  padding: 30px;
+  text-align: center;
+  font-size: 200%;
+}
+
+.columnLg {
+  padding: 0px;
+  margin: 0px;
+  width: 70%;
+  float: left;
+
+}
+
+ #locations {
+  background-color: rgb(218, 184, 119);
+  border-collapse: collapse;
+  width: 50%;
+}
+
+.clearfix {
+  clear:both;
+}
 
 .highlight {
   font-family: 'Sedgwick Ave Display', cursive;
@@ -49,11 +96,12 @@ td {
 .navbar ul li a {
   text-decoration: none;
   color: #ECEAE9;
+  font-size: 3em;
+
 }
 .data {
   color: black;
   font-family: 'Arial', sans-serif;
-  font-size: 3em;
 
 }
 
