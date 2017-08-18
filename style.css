@@ -6,17 +6,12 @@ rgb(169, 86, 52); /* orange-brown */
 
 body {
   background-color: rgba(182, 99, 58, 0.9);
-  /*border: 1px black solid;*/
   width: 1200px;
   margin: auto;
 }
 
 header {
   text-align: center;
-}
-
-section {
-  /*border: thin solid black;*/
 }
 
 #salesPage {
