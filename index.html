@@ -7,21 +7,99 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
-      <img src="photos/salmon.png" alt="Its a fish"/>
-      <h1 class="highlight">The World's Most Amazing Salmon Cookies!</h1>
+    <header id="top">
+      <img id="mainFish" src="photos/salmon.png" alt="Its a fish"/>
+      <h1 class="highlight hugeText">The World's Most Amazing Salmon Cookies!</h1>
     </header>
     <nav class="navbar">
       <ul class="data">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Locations</a></li>
-        <li><a href="#">Hours</a></li>
+        <li><a href="#contactUs">Contact Us</a></li>
+        <li><a href="#usInfo">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#storeLocations">Locations</a></li>
+        <li><a href="#openHours">Hours</a></li>
       </ul>
     </nav>
-    <div class="textThings">
-      Hodor, HODOR hodor, hodor hodor... Hodor hodor hodor. Hodor, hodor. Hodor. Hodor, hodor... Hodor hodor hodor?! Hodor hodor hodor hodor, hodor. Hodor hodor - HODOR hodor, hodor hodor?! Hodor. Hodor HODOR hodor, hodor hodor - hodor. Hodor, HODOR hodor, hodor hodor... Hodor hodor hodor. Hodor, hodor. Hodor. Hodor, hodor... Hodor hodor hodor?! Hodor hodor hodor hodor, hodor. Hodor hodor - HODOR hodor, hodor hodor?! Hodor. Hodor HODOR hodor, hodor hodor - hodor.
+    <div class="textThings" id="usInfo">
+      <h2 class="hightlight">About Pat's Salmon Cookies</h2>
+      <p>
+        Your friend Pat has come up with a business idea by combining two signature Seattle icons: Pat has developed a recipe for a coffee-time confection called Salmon Cookies.  They're cookies made into the shape of a salmon, and actually made with salmon (though the fish is ground up so fine that you can't even taste it!) that is the ideal match for a steaming cup of coffee on a gray Seattle morning. Or gray Seattle afternoon... whatever. Tourists will go gaga for them, locals will begrudgingly fall in love with them, and all will be right with the world.
+      </p>
+      <p>
+        Our mission here at Pat's Salmon Cookies is to ...The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. And save the world from the evils of big business.
+      </p>
+      <section class = 'chinookBanner'> </section>
+    </div>
+    <div class="data">
+      <section class="columnLg" id="storeLocations">
+        <h2 class="highlight">Our Locations</h2>
+
+        <table >
+          <thead>
+            <th id="locations">Location Name</th>
+            <th id="locations">Where it is...</th>
+          </thead>
+          <tr>
+            <td id="locations">First and Pike</td>
+            <td id="locations">122345 Pike St. Seattle</td>
+          </tr>
+          <tr>
+            <td id="locations">Seatac Airport</td>
+            <td id="locations">2345 Airport Way, Seattle</td>
+          </tr>
+          <tr>
+            <td id="locations">Seattle Center</td>
+            <td id="locations">78990 Denny Way, Seattle</td>
+          </tr>
+          <tr>
+            <td id="locations">Capitol Hill</td>
+            <td id="locations">12234 Capitol Ave., Seattle</td>
+          </tr>
+          <tr>
+            <td id="locations">Alki</td>
+            <td id="locations">45677 Lake Dr. Somewhere</td>
+          </tr>
+        </table>
+      </section>
+      <section class="columnSm" id="openHours">
+        <h2 class="highlight largetext">When are we open you ask?</h2>
+        <p class="highlight largetext">All of our locations are open 7 days a week from 6am - 8pm</p>
+      </section>
+    </div>
+    <div class="clearfix"></div>
+    <hr>
+    <div class="data">
+      <h2 class="highlight hugeText" id="products">Amazeballs Merch!!</h2>
+      <section class="highlight">
+        <p class="overlay">COMING SOON</p>
+        <div class="productWindow">
+        <a href="#"><img src="photos/cutter.jpeg" alt="Cookie Cutter" title="Salmon Cookie cutter"/></a>
+        <a href="#"><img src="photos/fish.jpg" alt="Fish magnets" title="Salmon Refridgerator Magnets"/></a>
+        <a href="#"><img src="photos/shirt.jpg" alt="TShirt" title="Fishy T-Shirt"/></a>
+        <a href="#"><img src="photos/family.jpg" alt="Product Calendar" title="Yearly Calendar"/></a>
+          </div>
+      </section>
+    </div>
+    <div class="textThings ">
+      <h2 class="highlight hugeText">FISHY NEWS...</h2>
+        <section class="columnLg ">
+          <ul>
+            <li>We will be hanging out with our Solar Shades on during the eclipse next week, with fresh Salmon Cookies for the masses!</li>
+            <li>Don't forget to find us at the Seattle Fish Festival</li>
+            <li>We will be giving out free Salmon Cookies during the "Stop the Oil" protest in downtown Everett on (date)</li>
+            <li>We will be sponsoring this years Spawn Watch event.. stay tuned for details.</li>
+          </ul>
+        </section>
+        <section class="columnSm">
+          <img id="chinookSize" src="photos/chinook.jpg" alt="Fish photo" title="Chinook Salmon"/>
+        </section>
+    </div> 
+    <section id="contactUs">
+      <h2>Contact Us:</h2>
+      <p>patsSalmonCookies@aol.com</p>
+      <p>Pats Personal Phone: 605-475-6968</p><a href="#top">Back to Top</a>
+    </section>
+    <div class="spacer">
     </div>
   </body>
 </html>

@@ -1,17 +1,26 @@
+/*color: rgb(218, 184, 119); /* tan
+color: rgb(17, 18, 12);/* blackish
+rgb(185, 117, 55);  /* orangy-tan
+rgb(168, 73, 52); /* burnt-orange
+rgb(169, 86, 52); /* orange-brown */
+
 body {
-  background-color: rgba(182, 99, 58, 0.7);
-  border: 1px black solid;
+  background-color: rgba(182, 99, 58, 0.9);
   width: 1200px;
   margin: auto;
+}
+
+header {
   text-align: center;
 }
 
 #salesPage {
-  background-color: white;
+  background-color: rgb(185, 117, 55);
 }
 
 table {
   font-family: sans-serif;
+  text-align: center;
   display: table;
   align-content: center;
   border-collapse: collapse;
@@ -34,13 +43,102 @@ td {
   font-size: 1.5em;
 
 }
+.chinookBanner {
+  background-image: url(photos/frosted-cookie.jpg);
+  min-height: 175px;
+  min-width: 100%;
+}
+
+img {
+  width: 200px;
+}
+
+ul {
+  background-color: rgb(169, 86, 52);
+  color: rgb(17, 18, 12);
+}
+
+.overlay {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12em;
+  position: relative;
+  left: -135px;
+  top: 37px;
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+
+.productWindow a {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.columnSm {
+  padding: 0px;
+  color: rgb(168, 73, 52);
+  margin: 0px;
+  height: 100%;
+  width: 29%;
+  float: left;
+}
+
+.largetext {
+  padding: 20px;
+  text-align: center;
+  font-size: 200%;
+}
+
+.productWindow {
+  padding-bottom: 40px;
+}
+
+.columnLg {
+  padding: 0px;
+  height: 100%;
+  margin: 0px;
+  width: 69%;
+  float: left;
+}
+
+.hugeText {
+  font-size: 3.5em;
+}
+
+#mainFish {
+  width: 400px;
+}
+
+#chinookSize {
+  width: 100%;
+}
+
+ #locations {
+  background-color: rgb(218, 184, 119);
+  border: 0px;
+  width: 50%;
+}
+
+.clearfix {
+  clear:both;
+}
+
+.spacer {
+  min-height: 50px;
+}
+
+.form {
+  padding-bottom: 20px;
+}
 
 .highlight {
   font-family: 'Sedgwick Ave Display', cursive;
 
 }
 .navbar {
+  text-align: center;
   background-color: #b6633a;
+  border: 2px solid rgb(17, 18, 12);
 }
 .navbar ul li {
   display: inline;
@@ -49,11 +147,12 @@ td {
 .navbar ul li a {
   text-decoration: none;
   color: #ECEAE9;
+  font-size: 3em;
+
 }
 .data {
   color: black;
   font-family: 'Arial', sans-serif;
-  font-size: 3em;
 
 }
 
