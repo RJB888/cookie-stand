@@ -11,13 +11,13 @@ var alki = new Store('Alki', 2, 16, 4.6);
 var myLocations = [firstPike, seaTac, seattleCenter, capitolHill, alki];
 
 
-function Store(name, minCust, maxCust, cookiePerHr) {
+function Store(name, minCust, maxCust, cookiePerCust) {
 
   this.name = name;
   this.storeHours = storeOpenHours;
   this.minHourlyCust = minCust;
   this.maxHourlyCust = maxCust;
-  this.avgCookiePer = cookiePerHr;
+  this.avgCookiePer = cookiePerCust;
   this.hourlyCookies = [];
   this.dailyCookies = 0;
 
@@ -52,7 +52,6 @@ function Store(name, minCust, maxCust, cookiePerHr) {
     };
     createAndAppend('td', newRow, this.dailyCookies);
     uberTotal += this.dailyCookies;
-    this.added = true;
   };
 
   this.calcAvgCookiePerHr();
@@ -78,8 +77,7 @@ function buildBody(table, storesArray){
 }
 
 function buildFoot(table){
-  var myFooter = document.createElement('tfoot');
-  table.appendChild(myFooter);
+  var myFooter = createAndAppend('tfoot', table);
   createAndAppend('td', myFooter, 'Total: ');
   for (var i = 0; i < storeOpenHours.length; i++){
     createAndAppend('td', myFooter, allStoresHourlyTotals[i]);
