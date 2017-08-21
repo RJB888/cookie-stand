@@ -10,7 +10,6 @@ var capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
 var myLocations = [firstPike, seaTac, seattleCenter, capitolHill, alki];
 
-
 function Store(name, minCust, maxCust, cookiePerCust) {
 
   this.name = name;
@@ -23,7 +22,6 @@ function Store(name, minCust, maxCust, cookiePerCust) {
 
   this.customerPerHr = function() {
     var hourlyCustomerEst = Math.floor(Math.random() * (this.maxHourlyCust - this.minHourlyCust) + this.minHourlyCust);
-    console.log('Hourly Customer: ' + hourlyCustomerEst);
     return hourlyCustomerEst;
   };
 
@@ -32,7 +30,6 @@ function Store(name, minCust, maxCust, cookiePerCust) {
     this.dailyCookies = 0;
     for (var y = 0; y < this.storeHours.length; y++){
       this.hourlyCookies.push(Math.ceil(this.customerPerHr() * this.avgCookiePer));
-      console.log('cookies this hour: ' + this.hourlyCookies[y]);
       this.dailyCookies += this.hourlyCookies[y];
     }
   };
@@ -85,29 +82,6 @@ function buildFoot(table){
   createAndAppend('td', myFooter, uberTotal);
 }
 
-function generateReport(storesArray){
-  var bodyHolder = document.getElementById('salesBody');
-  bodyHolder.innerHTML = '';
-  var myTable = createAndAppend('table', bodyHolder, '','', myTable);
-
-  buildHead(myTable);
-  buildBody(myTable, myLocations);
-  buildFoot(myTable);
-}
-
-// to capture form data
-var newStoreForm = document.getElementById('addNewStore');
-newStoreForm.addEventListener('submit', harvestAndPostData);
-function harvestAndPostData(event) {
-  event.preventDefault();
-  var store = new Store(this.elements['storeName'].value, parseInt(this.elements['minCustomers'].value), parseInt(this.elements['maxCustomers'].value), parseFloat(this.elements['cookiesPerHour'].value));
-  myLocations.push(store);
-  generateReport(myLocations);
-  newStoreForm.reset();
-}
-
-generateReport(myLocations);
-
 function createAndAppend(tag, parentVar, content, itsClass, itsId) {
   var newElement = document.createElement(tag);
   if (content) {
@@ -122,3 +96,26 @@ function createAndAppend(tag, parentVar, content, itsClass, itsId) {
   parentVar.appendChild(newElement);
   return newElement;
 }
+
+function generateReport(storesArray){
+  var bodyHolder = document.getElementById('salesBody');
+  bodyHolder.innerHTML = '';
+  var myTable = createAndAppend('table', bodyHolder, '','', myTable);
+
+  buildHead(myTable);
+  buildBody(myTable, myLocations);
+  buildFoot(myTable);
+}
+
+// event listener and handler to capture form data
+var newStoreForm = document.getElementById('addNewStore');
+newStoreForm.addEventListener('submit', harvestAndPostData);
+function harvestAndPostData(event) {
+  event.preventDefault();
+  var store = new Store(this.elements['storeName'].value, parseInt(this.elements['minCustomers'].value), parseInt(this.elements['maxCustomers'].value), parseFloat(this.elements['cookiesPerHour'].value));
+  myLocations.push(store);
+  generateReport(myLocations);
+  newStoreForm.reset();
+}
+
+generateReport(myLocations);
